@@ -1,0 +1,9 @@
+sudo: required
+services: 
+  - docker
+
+before_install: 
+  - docker build -t pengxinfan417/docker-react -f Dockerfile.dev .
+
+script: 
+  - docker run pengxinfan417/docker-react -- --coverage
